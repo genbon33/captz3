@@ -249,8 +249,9 @@ img {
     background: #ffffff;
     transition: 0.3s;
 }
+
 .hamburger .visible {
-background-color: #1B365C;
+    background-color: #1B365C;
 }
 
 .hamburger span:nth-child(1) {
@@ -329,10 +330,22 @@ background-color: #1B365C;
     overflow: hidden;
 }
 
-.main-img1 img {
+#main-img1 img {
     min-height: 665px;
     width: 100%;
     margin: 0 auto;
+    transform: scale(1);
+    animation: scaleUp 12s ease-out forwards;
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.1);
+    }
 }
 
 .slick-controls {
@@ -341,7 +354,11 @@ background-color: #1B365C;
 }
 
 .main-img-responsive img {
+    width: 150%;
+    margin-left: -200px;
     display: none;
+    transform: scale(1);
+    animation: scaleUp 12s ease-out forwards;
 }
 
 /* *****************************slick prev next bgn************************* */
@@ -450,7 +467,7 @@ background-color: #1B365C;
 .img-message p {
     color: #000000;
     font-family: "shippori_ex";
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     line-height: 1.65;
     opacity: 0;
@@ -719,7 +736,7 @@ background-color: #1B365C;
     left: 0;
     right: 0;
     padding: 10px 10px 5px;
-    background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0));
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
     color: #fff;
 }
 
@@ -738,11 +755,12 @@ background-color: #1B365C;
     .gallery-slider {
         padding: 0 20px;
     }
-    
+
     .gallery-item {
         height: 250px;
     }
 }
+
 /* modal */
 .gallery-modal {
     display: none;
@@ -774,7 +792,9 @@ background-color: #1B365C;
     color: #fff;
     font-size: 40px;
     cursor: pointer;
+    z-index: 10006;
 }
+
 /* ナビゲーションボタンのスタイル */
 .modal-prev,
 .modal-next {
@@ -789,6 +809,7 @@ background-color: #1B365C;
     cursor: pointer;
     transition: background-color 0.3s;
 }
+
 .modal-prev span,
 .modal-next span {
     display: block;
@@ -821,6 +842,7 @@ background-color: #1B365C;
 .modal-next {
     right: 20px;
 }
+
 /* **********************************gallery end********************************** */
 /* *****************************achievement-section bgn*************************** */
 
@@ -1292,8 +1314,7 @@ background-color: #1B365C;
 #rnewgrad,
 #interview,
 #process,
-#faq
-{
+#faq {
 
     scroll-margin-top: 100px;
 }
@@ -1332,7 +1353,7 @@ background-color: #1B365C;
         top: 0px;
         left: 0;
         width: 100%;
-        height: 50vh;
+        height: 70vh;
         background: #ffffffe6;
         padding: 2rem;
         padding-top: 100px;
@@ -1504,7 +1525,7 @@ background-color: #1B365C;
         display: none;
     }
 
-    .main-img1 img {
+    #main-img1 img {
         width: 1000px;
     }
 
@@ -1546,7 +1567,32 @@ background-color: #1B365C;
     }
 
     .nav-list li a {
-        color: #1B365C;
+        color: #1B365C
+    }
+
+    .modal-img {
+        max-width: none;
+        max-height: none;
+        width: 100vw;
+        height: auto;
+    }
+
+    .gallery-modal {
+        padding: 0;
+    }
+
+    .modal-next,
+    .modal-prev {
+        width: 35px;
+        height: 215px;
+    }
+
+    .modal-next {
+        right: 0;
+    }
+
+    .modal-prev {
+        left: 0;
     }
 
 }
@@ -2140,6 +2186,7 @@ background-color: #1B365C;
     .summary-number span {
         font-size: 1.5rem;
     }
+
     .service-image {
         padding: 0 0 0 0;
         margin: 0 auto;
@@ -2335,6 +2382,7 @@ background-color: #1B365C;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     overflow: hidden;
 }
+
 .company-img img {
     width: 100%;
     height: 100%;
@@ -2473,103 +2521,104 @@ button:focus {
 }
 
 @media screen and (max-width: 768px) {
-/* About Page Responsive Styles */
-@media screen and (max-width: 768px) {
-    /* Hero Section */
-    .about-hero-title {
-        font-size: 2rem;
+    /* About Page Responsive Styles */
+    @media screen and (max-width: 768px) {
+
+        /* Hero Section */
+        .about-hero-title {
+            font-size: 2rem;
+        }
+
+        /* CEO Message Section */
+        .ceo-content {
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .ceo-image {
+            flex: 0 0 auto;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .ceo-text h2 {
+            font-size: 1.6rem;
+            text-align: center;
+        }
+
+        .ceo-text h3 {
+            font-size: 1.3rem;
+            text-align: center;
+        }
+
+        /* Philosophy Section */
+        .philosophy-sub {
+            grid-template-columns: 1fr;
+        }
+
+        .philosophy-main p {
+            font-size: 1.6rem;
+        }
+
+        /* Profile Section */
+        .profile-content {
+            display: block;
+        }
+
+        .company-img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .profile-table {
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .profile-table th {
+            width: 35%;
+        }
+
+        /* Technology Section */
+        .technology-content {
+            grid-template-columns: 1fr;
+        }
+
+        /* Vision Section */
+        .vision-grid {
+            grid-template-columns: 1fr;
+        }
+
+        /* 共通セクション */
+        .section-title {
+            font-size: 1.8rem;
+        }
+
+        .container {
+            padding: 0 15px;
+        }
     }
 
-    /* CEO Message Section */
-    .ceo-content {
-        flex-direction: column;
-        gap: 30px;
-    }
+    /* さらに小さい画面サイズ用 */
+    @media screen and (max-width: 480px) {
+        .about-hero-title {
+            font-size: 1.8rem;
+        }
 
-    .ceo-image {
-        flex: 0 0 auto;
-        width: 100%;
-        max-width: 300px;
-        margin: 0 auto;
-    }
+        .profile-table th,
+        .profile-table td {
+            padding: 15px 10px;
+        }
 
-    .ceo-text h2 {
-        font-size: 1.6rem;
-        text-align: center;
-    }
+        .ceo-text h2 {
+            font-size: 1.4rem;
+        }
 
-    .ceo-text h3 {
-        font-size: 1.3rem;
-        text-align: center;
+        .ceo-text h3 {
+            font-size: 1.2rem;
+        }
     }
-
-    /* Philosophy Section */
-    .philosophy-sub {
-        grid-template-columns: 1fr;
-    }
-
-    .philosophy-main p {
-        font-size: 1.6rem;
-    }
-
-    /* Profile Section */
-    .profile-content {
-        display: block;
-    }
-
-    .company-img {
-        width: 100%;
-        height: 100%;
-    }
-
-    .profile-table {
-        width: 100%;
-        margin: 20px 0;
-    }
-
-    .profile-table th {
-        width: 35%;
-    }
-
-    /* Technology Section */
-    .technology-content {
-        grid-template-columns: 1fr;
-    }
-
-    /* Vision Section */
-    .vision-grid {
-        grid-template-columns: 1fr;
-    }
-
-    /* 共通セクション */
-    .section-title {
-        font-size: 1.8rem;
-    }
-
-    .container {
-        padding: 0 15px;
-    }
-}
-
-/* さらに小さい画面サイズ用 */
-@media screen and (max-width: 480px) {
-    .about-hero-title {
-        font-size: 1.8rem;
-    }
-
-    .profile-table th,
-    .profile-table td {
-        padding: 15px 10px;
-    }
-
-    .ceo-text h2 {
-        font-size: 1.4rem;
-    }
-
-    .ceo-text h3 {
-        font-size: 1.2rem;
-    }
-}
 }
 
 /* ***************************************about-page end************************** */
@@ -2980,6 +3029,7 @@ button:focus {
     padding: 20px;
     max-height: 300px;
 }
+
 /* Responsive Design */
 @media screen and (max-width: 768px) {
     .recruit-hero-title {
@@ -2995,6 +3045,7 @@ button:focus {
         flex: 0 0 auto;
         width: 100%;
     }
+
     .interview-card {
         flex-direction: column;
         padding: 20px;
@@ -3185,26 +3236,26 @@ button:focus {
     .news-hero-title {
         font-size: 2rem;
     }
-    
+
     .news-list {
         margin: 0 20px;
     }
-    
+
     .news-item {
         flex-direction: column;
         align-items: flex-start;
         padding: 20px;
     }
-    
+
     .news-date {
         margin-bottom: 8px;
     }
-    
+
     .news-title {
         padding-right: 0;
         padding-bottom: 20px;
     }
-    
+
     .badge-new {
         top: auto;
         bottom: 0;
@@ -3221,6 +3272,7 @@ button:focus {
         height: 35px;
     }
 }
+
 /* *************************news-page end************************ */
 /* *************************contact-page bgn********************* */
 /* Contact Page Styles */
